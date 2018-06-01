@@ -19,6 +19,20 @@ go get -u google.golang.org/grpc
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 ```
 
+# Run it
+
+Start the server
+```
+./build/install/examples/bin/hello-world-server
+```
+_(Note the port on there is what needed to be changed on the entry.go file ```echoEndpoint = flag.String("echo_endpoint", "localhost:50051", "endpoint of YourService")```)_
+
+Then run the go proxy
+```go run entry.go```
+
+Then hit it up!
+```curl -X POST -k http://localhost:8080/v1/say/hello```
+
 
 grpc Examples
 ==============================================
