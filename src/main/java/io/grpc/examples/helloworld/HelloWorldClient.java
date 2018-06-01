@@ -57,7 +57,7 @@ public class HelloWorldClient {
     HelloRequest request = HelloRequest.newBuilder().setName(name).build();
     HelloReply response;
     try {
-      response = blockingStub.sayHello(request);
+      response = blockingStub.sayHelloAgain(request);
     } catch (StatusRuntimeException e) {
       logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
       return;

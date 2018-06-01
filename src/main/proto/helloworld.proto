@@ -19,12 +19,24 @@ option java_package = "io.grpc.examples.helloworld";
 option java_outer_classname = "HelloWorldProto";
 option objc_class_prefix = "HLW";
 
+// Otherwise google.api.http error
+import "google/api/annotations.proto";
+
 package helloworld;
 
 // The greeting service definition.
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply) {}
+  // Sends another
+  // rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+
+  rpc SayHelloAgain(HelloRequest) returns (HelloReply) {
+    option (google.api.http) = {
+      post: "/v1/say/hello"
+      body: "*"
+    };
+  }
 }
 
 // The request message containing the user's name.
