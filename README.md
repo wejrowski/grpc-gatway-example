@@ -2,6 +2,23 @@ This is based off the [grpc-java](https://github.com/grpc/grpc-java) project and
 
 To run the proxy run ```go run entry.go```
 
+# Installation
+
+Install Protobuf
+```brew install protobuf```
+
+Install Go
+```brew install go```
+
+Install go dependencies
+```
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+go get -u github.com/golang/protobuf/protoc-gen-go
+go get -u google.golang.org/grpc
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+```
+
 
 grpc Examples
 ==============================================
